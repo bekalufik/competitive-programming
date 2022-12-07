@@ -1,0 +1,31 @@
+function gradingStudents(grades) {
+    // Write your code here
+    
+    let results=[];
+    for(let i=0;i<grades.length;i++){
+        if((0<=grades[i]&&grades[i]<=100)&&(1<=grades.length&&grades.length<=60)){
+            
+            if(grades[i]===parseInt(grades[i])){
+                  if(grades[i]<37){
+            results.push(grades[i]);
+        }else if(grades[i]>=37&&(5-grades[i]%10>0&&5-grades[i]%10<=2)){
+            results.push((grades[i]-grades[i]%10)+5);
+        }else if(grades[i]>=37&&(5-grades[i]%10>2&&5-grades[i]%10<=5)){
+            results.push(grades[i]);
+        }else if(grades[i]>=37&&(5-grades[i]%10>=-2&&5-grades[i]%10<0)){
+            results.push(grades[i]);
+        }else if(grades[i]>=37&&(5-grades[i]%10>-5&&5-grades[i]%10<=-3)){
+            results.push((grades[i]-grades[i]%10)+10);
+        }else{
+            results.push(grades[i])
+        }
+            }else{
+                return 'error';
+            }
+          
+        }
+         
+    }
+    return results;
+
+}
